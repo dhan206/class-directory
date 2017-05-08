@@ -13,6 +13,11 @@ class DirectoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showWelcomeDialogIfFirstTimeUser()
+    }
 
     // MARK: - Table view data source
 
@@ -34,4 +39,15 @@ class DirectoryTableViewController: UITableViewController {
     }
     */
 
+    func showWelcomeDialogIfFirstTimeUser() {
+        let hasSeenWelcomeDialog = UserDefaults.standard.bool(forKey: "HasSeenWelcomeDialog")
+        if !hasSeenWelcomeDialog {
+            let alertController = UIAlertController(title: "Welcome", message: "Here's the directory of the class", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+            
+            UserDefaults.standard.set(true, forKey: "HasSeenWelcomeDialog")
+        }
+    }
 }
