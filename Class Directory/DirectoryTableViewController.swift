@@ -21,9 +21,6 @@ class DirectoryTableViewController: UITableViewController {
     
     @IBAction func onAddTapped(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "Welcome", message: "Here's the directory of the class", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        
         alertController.addTextField(configurationHandler: { (nameTextField) in
             nameTextField.placeholder = "Name"
         })
@@ -31,8 +28,16 @@ class DirectoryTableViewController: UITableViewController {
             ageTextField.placeholder = "Age"
         })
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (okClicked) in
+            let name = alertController.textFields![0].text!
+            let age = Int(alertController.textFields![1].text!)!
+            print(name)
+            print(age)
+        }
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
+        
         present(alertController, animated: true, completion: nil)
     }
 
