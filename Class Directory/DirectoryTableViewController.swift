@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class DirectoryTableViewController: UITableViewController {
-
+    var appDelegate: AppDelegate
+    var managedObjectContext: NSManagedObjectContext
+    
+    required init?(coder aDecoder: NSCoder) {
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        managedObjectContext = appDelegate.persistentContainer.viewContext
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -31,9 +40,17 @@ class DirectoryTableViewController: UITableViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let okAction = UIAlertAction(title: "Ok", style: .default) { (okClicked) in
             let name = alertController.textFields![0].text!
-            let age = Int(alertController.textFields![1].text!)!
-            print(name)
-            print(age)
+            let age = Int16(alertController.textFields![1].text!)!
+            
+            let student = NSEntityDescription.insertNewObject(forEntityName: "Student", into: self.managedObjectContext) as! Student
+            student.name = name
+            student.age = age
+            
+            do {
+                try self.managedObjectContext.save()
+            } catch {
+                fatalError()
+            }
         }
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
