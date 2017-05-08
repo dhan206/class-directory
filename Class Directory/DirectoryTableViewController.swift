@@ -40,6 +40,18 @@ class DirectoryTableViewController: UITableViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+    func showWelcomeDialogIfFirstTimeUser() {
+        let hasSeenWelcomeDialog = UserDefaults.standard.bool(forKey: "HasSeenWelcomeDialog")
+        if !hasSeenWelcomeDialog {
+            let alertController = UIAlertController(title: "Welcome", message: "Here's the directory of the class", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+            
+            UserDefaults.standard.set(true, forKey: "HasSeenWelcomeDialog")
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -60,16 +72,4 @@ class DirectoryTableViewController: UITableViewController {
         return cell
     }
     */
-
-    func showWelcomeDialogIfFirstTimeUser() {
-        let hasSeenWelcomeDialog = UserDefaults.standard.bool(forKey: "HasSeenWelcomeDialog")
-        if !hasSeenWelcomeDialog {
-            let alertController = UIAlertController(title: "Welcome", message: "Here's the directory of the class", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            alertController.addAction(okAction)
-            present(alertController, animated: true, completion: nil)
-            
-            UserDefaults.standard.set(true, forKey: "HasSeenWelcomeDialog")
-        }
-    }
 }
