@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		BE5B9D831EBFEBD400A767AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B9D821EBFEBD400A767AD /* AppDelegate.swift */; };
-		BE5B9D851EBFEBD400A767AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B9D841EBFEBD400A767AD /* ViewController.swift */; };
 		BE5B9D881EBFEBD400A767AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5B9D861EBFEBD400A767AD /* Main.storyboard */; };
 		BE5B9D8B1EBFEBD400A767AD /* Class_Directory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE5B9D891EBFEBD400A767AD /* Class_Directory.xcdatamodeld */; };
 		BE5B9D8D1EBFEBD400A767AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5B9D8C1EBFEBD400A767AD /* Assets.xcassets */; };
 		BE5B9D901EBFEBD400A767AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5B9D8E1EBFEBD400A767AD /* LaunchScreen.storyboard */; };
 		BE5B9D9B1EBFEBD400A767AD /* Class_DirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B9D9A1EBFEBD400A767AD /* Class_DirectoryTests.swift */; };
 		BE5B9DA61EBFEBD500A767AD /* Class_DirectoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B9DA51EBFEBD500A767AD /* Class_DirectoryUITests.swift */; };
+		BE5B9DB41EBFECD400A767AD /* DirectoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B9DB31EBFECD400A767AD /* DirectoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* Begin PBXFileReference section */
 		BE5B9D7F1EBFEBD400A767AD /* Class Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Class Directory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5B9D821EBFEBD400A767AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE5B9D841EBFEBD400A767AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE5B9D871EBFEBD400A767AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE5B9D8A1EBFEBD400A767AD /* Class_Directory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Class_Directory.xcdatamodel; sourceTree = "<group>"; };
 		BE5B9D8C1EBFEBD400A767AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		BE5B9DA11EBFEBD500A767AD /* Class DirectoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Class DirectoryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5B9DA51EBFEBD500A767AD /* Class_DirectoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class_DirectoryUITests.swift; sourceTree = "<group>"; };
 		BE5B9DA71EBFEBD500A767AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE5B9DB31EBFECD400A767AD /* DirectoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				BE5B9D821EBFEBD400A767AD /* AppDelegate.swift */,
-				BE5B9D841EBFEBD400A767AD /* ViewController.swift */,
+				BE5B9DB31EBFECD400A767AD /* DirectoryTableViewController.swift */,
 				BE5B9D861EBFEBD400A767AD /* Main.storyboard */,
 				BE5B9D8C1EBFEBD400A767AD /* Assets.xcassets */,
 				BE5B9D8E1EBFEBD400A767AD /* LaunchScreen.storyboard */,
@@ -266,7 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE5B9D8B1EBFEBD400A767AD /* Class_Directory.xcdatamodeld in Sources */,
-				BE5B9D851EBFEBD400A767AD /* ViewController.swift in Sources */,
+				BE5B9DB41EBFECD400A767AD /* DirectoryTableViewController.swift in Sources */,
 				BE5B9D831EBFEBD400A767AD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +520,7 @@
 				BE5B9DAC1EBFEBD500A767AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE5B9DAD1EBFEBD500A767AD /* Build configuration list for PBXNativeTarget "Class DirectoryTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +529,7 @@
 				BE5B9DAF1EBFEBD500A767AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE5B9DB01EBFEBD500A767AD /* Build configuration list for PBXNativeTarget "Class DirectoryUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +538,7 @@
 				BE5B9DB21EBFEBD500A767AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
