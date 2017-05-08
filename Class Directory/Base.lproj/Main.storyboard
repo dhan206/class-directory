@@ -42,7 +42,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Students" id="qg2-CV-DbK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gzd-H5-0XR"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gzd-H5-0XR">
+                            <connections>
+                                <action selector="onAddTapped:" destination="wZg-ej-KUI" id="6v6-Hj-AeH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GTY-Pm-Zco" userLabel="First Responder" sceneMemberID="firstResponder"/>

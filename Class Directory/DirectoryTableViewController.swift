@@ -18,6 +18,23 @@ class DirectoryTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         showWelcomeDialogIfFirstTimeUser()
     }
+    
+    @IBAction func onAddTapped(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Welcome", message: "Here's the directory of the class", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alertController.addTextField(configurationHandler: { (nameTextField) in
+            nameTextField.placeholder = "Name"
+        })
+        alertController.addTextField(configurationHandler: { (ageTextField) in
+            ageTextField.placeholder = "Age"
+        })
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
 
     // MARK: - Table view data source
 
