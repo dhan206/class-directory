@@ -10,14 +10,10 @@ import UIKit
 import CoreData
 
 class DirectoryTableViewController: UITableViewController {
-    var appDelegate: AppDelegate
-    var managedObjectContext: NSManagedObjectContext
-    
-    required init?(coder aDecoder: NSCoder) {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedObjectContext = appDelegate.persistentContainer.viewContext
-        super.init(coder: aDecoder)
-    }
+    var appDelegate: AppDelegate!
+    var managedObjectContext: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
