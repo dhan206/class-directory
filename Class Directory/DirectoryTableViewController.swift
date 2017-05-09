@@ -59,14 +59,14 @@ class DirectoryTableViewController: UITableViewController {
     }
     
     func showWelcomeDialogIfFirstTimeUser() {
-        let hasSeenWelcomeDialog = UserDefaults.standard.bool(forKey: "HasSeenWelcomeDialog")
-        if !hasSeenWelcomeDialog {
+        let isNewUser = UserDefaults.standard.bool(forKey: "IsNewUser")
+        if isNewUser {
             let alertController = UIAlertController(title: "Welcome", message: "Here's the directory of the class", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alertController.addAction(okAction)
             present(alertController, animated: true, completion: nil)
             
-            UserDefaults.standard.set(true, forKey: "HasSeenWelcomeDialog")
+            UserDefaults.standard.set(false, forKey: "IsNewUser")
         }
     }
 
