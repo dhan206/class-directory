@@ -15,6 +15,7 @@
 		BE5B9D9B1EBFEBD400A767AD /* Class_DirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B9D9A1EBFEBD400A767AD /* Class_DirectoryTests.swift */; };
 		BE5B9DA61EBFEBD500A767AD /* Class_DirectoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B9DA51EBFEBD500A767AD /* Class_DirectoryUITests.swift */; };
 		BE5B9DB41EBFECD400A767AD /* DirectoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B9DB31EBFECD400A767AD /* DirectoryTableViewController.swift */; };
+		BE6DCE1C1EC1655A0061E064 /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE6DCE1B1EC1655A0061E064 /* Preferences.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		BE5B9DA51EBFEBD500A767AD /* Class_DirectoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class_DirectoryUITests.swift; sourceTree = "<group>"; };
 		BE5B9DA71EBFEBD500A767AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE5B9DB31EBFECD400A767AD /* DirectoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewController.swift; sourceTree = "<group>"; };
+		BE6DCE1B1EC1655A0061E064 /* Preferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				BE5B9D8E1EBFEBD400A767AD /* LaunchScreen.storyboard */,
 				BE5B9D911EBFEBD400A767AD /* Info.plist */,
 				BE5B9D891EBFEBD400A767AD /* Class_Directory.xcdatamodeld */,
+				BE6DCE1B1EC1655A0061E064 /* Preferences.plist */,
 			);
 			path = "Class Directory";
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE5B9D901EBFEBD400A767AD /* LaunchScreen.storyboard in Resources */,
+				BE6DCE1C1EC1655A0061E064 /* Preferences.plist in Resources */,
 				BE5B9D8D1EBFEBD400A767AD /* Assets.xcassets in Resources */,
 				BE5B9D881EBFEBD400A767AD /* Main.storyboard in Resources */,
 			);
