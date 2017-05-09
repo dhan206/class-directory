@@ -9,14 +9,26 @@
 import UIKit
 import CoreData
 
-class DirectoryTableViewController: UITableViewController {
-        appDelegate = UIApplication.shared.delegate as! AppDelegate
-        managedObjectContext = appDelegate.persistentContainer.viewContext
+class DirectoryTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     var appDelegate: AppDelegate!
     var managedObjectContext: NSManagedObjectContext!
+    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        managedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Student")
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
+        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,20 +81,21 @@ class DirectoryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return fetchedResultsController.sections!.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return fetchedResultsController.sections![section].numberOfObjects
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StudentCell", for: indexPath)
 
-        // Configure the cell...
+        let student = self.fetchedResultsController!.object(at: indexPath) as! Student
+        
+        cell.textLabel?.text = student.name
+        cell.detailTextLabel?.text = String(student.age)
 
         return cell
     }
-    */
 }
